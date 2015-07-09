@@ -1,0 +1,30 @@
+{
+  "name": "get-hosts",
+  "version": "0.0.0",
+  "description": "`etc/hosts` as an array of arrays.",
+  "license": "MIT",
+  "repository": "hemanth/get-hosts",
+  "author": {
+    "name": "Hemanth.HM",
+    "email": "hemanth.hm@gmail.com",
+    "url": "h3manth.com"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "hosts",
+    "/etc/hosts",
+    "get-hosts"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "*"
+  }
+}
