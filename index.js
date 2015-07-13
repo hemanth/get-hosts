@@ -1,10 +1,8 @@
 'use strict';
-var HOSTS = process.platform === 'win32'
-  ? 'C:/Windows/System32/drivers/etc/hosts'
-  : '/etc/hosts'
+var hostsPath = require('hosts-path');
 var readFileSync = require('fs').readFileSync;
 module.exports = function () {
-	return readFileSync(HOSTS, { encoding: 'utf8' })
+	return readFileSync(hostsPath(), { encoding: 'utf8' })
 	  .split(/\r?\n/)
 		.map(function(line){
 			// R.E from feross/hostile
