@@ -23,7 +23,9 @@
     "/etc/hosts",
     "get-hosts"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "hosts-path": "^1.0.0"
+  },
   "devDependencies": {
     "mocha": "*"
   }
