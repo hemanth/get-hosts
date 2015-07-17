@@ -1,7 +1,7 @@
 {
   "name": "get-hosts",
   "version": "1.0.0",
-  "description": "`etc/hosts` as an array of arrays.",
+  "description": "`etc/hosts` as an array of objects.",
   "license": "MIT",
   "repository": "hemanth/get-hosts",
   "author": {
@@ -24,7 +24,6 @@
     "get-hosts"
   ],
   "dependencies": {
-    "callback-stream": "^1.0.2",
     "hosts-path": "^1.0.0"
   },
   "devDependencies": {
