@@ -8,8 +8,7 @@ it('should returns an array of objects sync', function () {
 
 it('should returns an array of objects async', function (done) {
 	getHosts(function(err, data){
-		console.log('d',data);
-		assert.strictEqual(Array.isArray(data,true));
+		assert.strictEqual(Array.isArray(data),true);
 		done();
 	})
 });

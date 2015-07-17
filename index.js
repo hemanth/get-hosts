@@ -1,10 +1,6 @@
 'use strict';
-var once = require('once');
-var split = require('split');
-var through = require('through');
 var readFileSync = require('fs').readFileSync;
-var createReadStream = require('fs').createReadStream;
-var callbackStream = require('callback-stream');
+var readFile = require('fs').readFile;
 var HOSTS = require('hosts-path')();
 var massageItem = function(line){
     // R.E from feross/hostile
@@ -20,26 +16,17 @@ var massageData = function(data) {
         .map(massageItem)
         .filter(Boolean);
 };
-var massageStream = function(data){
-    return through(function write(data){
-        var hostMap = massageItem(data);
-        if (hostMap) {
-            this.queue(data);
-        }
-    })
-};
+
 module.exports = function(cb) {
     if (typeof cb !== 'function') {
         return massageData(readFileSync(HOSTS, {
             encoding: 'utf8'
         }));
     } else {
-        cb = callbackStream(cb);
-        createReadStream(HOSTS, {
-            encoding: 'utf8'
-        })
-				.pipe(split())
-				.pipe(massageStream())
-				.pipe(cb);
+      readFile(HOSTS,'utf-8',function(err,data) {
+        var res = massageData(data);
+        if(res) return cb(null,data);
+        return cb(new Error("Couldn't process data"),false);
+      })
     }
 };

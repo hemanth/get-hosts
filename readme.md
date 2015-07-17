@@ -1,6 +1,6 @@
 # get-hosts [![Build Status](https://travis-ci.org/hemanth/get-hosts.svg?branch=master)](https://travis-ci.org/hemanth/get-hosts)
 
-> `etc/hosts` as an array of arrays.
+> `etc/hosts` as an array of objects.
 
 
 ## Install
@@ -15,15 +15,18 @@ $ npm install --save get-hosts
 ```js
 var getHosts = require('get-hosts');
 
-getHosts();
-/*
-[ [ '127.0.0.1', 'local.dev' ],
-  [ '127.0.0.1', 'localhost' ],
-  [ '255.255.255.255', 'broadcasthost' ],
-  [ '::1', 'localhost~ ' ] ] */
-```
+getHosts(); // sync
 
-P.S: It's sync file read operation here, given the size of the file.
+getHosts(function(err,hosts){
+	if(!err) console.log(hosts);
+});
+
+/*[ { 'local.dev': '127.0.0.1' },
+  { localhost: '127.0.0.1' },
+  { broadcasthost: '255.255.255.255' },
+  { 'localhost~ ': '::1' } ]*/
+
+```
 
 ## License
 
