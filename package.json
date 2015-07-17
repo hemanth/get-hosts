@@ -1,6 +1,6 @@
 {
   "name": "get-hosts",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "`etc/hosts` as an array of objects.",
   "license": "MIT",
   "repository": "hemanth/get-hosts",
