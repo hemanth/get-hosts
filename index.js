@@ -25,7 +25,7 @@ module.exports = function(cb) {
     } else {
       readFile(HOSTS,'utf-8',function(err,data) {
         var res = massageData(data);
-        if(res) return cb(null,data);
+        if(res) return cb(null,res);
         return cb(new Error("Couldn't process data"),false);
       })
     }
