@@ -28,6 +28,12 @@ getHosts(function(err,hosts){
 
 ```
 
+
+## Related
+
+- [get-hosts-cli](https://github.com/icyflame/get-hosts-cli/) - CLI for this module
+
+
 ## License
 
 MIT © [Hemanth.HM](http://h3manth.com)
