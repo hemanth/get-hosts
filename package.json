@@ -1,6 +1,6 @@
 {
   "name": "get-hosts",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "`etc/hosts` as an array of objects.",
   "license": "MIT",
   "repository": "hemanth/get-hosts",
@@ -13,7 +13,7 @@
     "node": ">= 4"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "mocha test.js"
   },
   "files": [
     "index.js"
@@ -27,6 +27,6 @@
     "hosts-path": "^1.0.0"
   },
   "devDependencies": {
-    "mocha": "*"
+    "mocha": "^11.7.0"
   }
 }
